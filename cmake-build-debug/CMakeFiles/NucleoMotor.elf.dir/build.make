@@ -69,10 +69,24 @@ include CMakeFiles/NucleoMotor.elf.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/NucleoMotor.elf.dir/flags.make
 
+CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
+CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/MotorDriver.c
+CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.obj"
+	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/MotorDriver.c
+
+CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.i"
+	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/MotorDriver.c > CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.i
+
+CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.s"
+	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/MotorDriver.c -o CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.s
+
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/gpio.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/gpio.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/gpio.c
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/gpio.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/gpio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/gpio.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Core/Src/gpio.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Core/Src/gpio.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Core/Src/gpio.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/gpio.c
 
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/gpio.c.i: cmake_force
@@ -86,7 +100,7 @@ CMakeFiles/NucleoMotor.elf.dir/Core/Src/gpio.c.s: cmake_force
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/main.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/main.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/main.c
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/main.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/main.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/main.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Core/Src/main.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Core/Src/main.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Core/Src/main.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/main.c
 
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/main.c.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/NucleoMotor.elf.dir/Core/Src/main.c.s: cmake_force
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/stm32f4xx_hal_msp.c
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/stm32f4xx_hal_msp.c
 
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_hal_msp.c.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_hal_msp.c.s: cmake_force
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_it.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_it.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/stm32f4xx_it.c
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_it.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_it.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_it.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_it.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_it.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_it.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/stm32f4xx_it.c
 
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_it.c.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_it.c.s: cmake_force
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/syscalls.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/syscalls.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/syscalls.c
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/syscalls.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/syscalls.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/syscalls.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Core/Src/syscalls.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Core/Src/syscalls.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Core/Src/syscalls.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/syscalls.c
 
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/syscalls.c.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/NucleoMotor.elf.dir/Core/Src/syscalls.c.s: cmake_force
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/sysmem.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/sysmem.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/sysmem.c
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/sysmem.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/sysmem.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/sysmem.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Core/Src/sysmem.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Core/Src/sysmem.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Core/Src/sysmem.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/sysmem.c
 
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/sysmem.c.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/NucleoMotor.elf.dir/Core/Src/sysmem.c.s: cmake_force
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/system_stm32f4xx.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/system_stm32f4xx.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/system_stm32f4xx.c
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/system_stm32f4xx.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/system_stm32f4xx.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/system_stm32f4xx.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Core/Src/system_stm32f4xx.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Core/Src/system_stm32f4xx.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Core/Src/system_stm32f4xx.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/system_stm32f4xx.c
 
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/system_stm32f4xx.c.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/NucleoMotor.elf.dir/Core/Src/system_stm32f4xx.c.s: cmake_force
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/tim.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/tim.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/tim.c
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/tim.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/tim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/tim.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Core/Src/tim.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Core/Src/tim.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Core/Src/tim.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/tim.c
 
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/tim.c.i: cmake_force
@@ -184,7 +198,7 @@ CMakeFiles/NucleoMotor.elf.dir/Core/Src/tim.c.s: cmake_force
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/usart.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/usart.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/usart.c
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/usart.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/usart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/NucleoMotor.elf.dir/Core/Src/usart.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Core/Src/usart.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Core/Src/usart.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Core/Src/usart.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/usart.c
 
 CMakeFiles/NucleoMotor.elf.dir/Core/Src/usart.c.i: cmake_force
@@ -197,7 +211,7 @@ CMakeFiles/NucleoMotor.elf.dir/Core/Src/usart.c.s: cmake_force
 
 CMakeFiles/NucleoMotor.elf.dir/Core/Startup/startup_stm32f446retx.s.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Core/Startup/startup_stm32f446retx.s.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Startup/startup_stm32f446retx.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building ASM object CMakeFiles/NucleoMotor.elf.dir/Core/Startup/startup_stm32f446retx.s.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building ASM object CMakeFiles/NucleoMotor.elf.dir/Core/Startup/startup_stm32f446retx.s.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/NucleoMotor.elf.dir/Core/Startup/startup_stm32f446retx.s.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Startup/startup_stm32f446retx.s
 
 CMakeFiles/NucleoMotor.elf.dir/Core/Startup/startup_stm32f446retx.s.i: cmake_force
@@ -211,7 +225,7 @@ CMakeFiles/NucleoMotor.elf.dir/Core/Startup/startup_stm32f446retx.s.s: cmake_for
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
 
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i: cmake_force
@@ -225,7 +239,7 @@ CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
 
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i: cmake_force
@@ -239,7 +253,7 @@ CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_co
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
 
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i: cmake_force
@@ -253,7 +267,7 @@ CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dm
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
 
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i: cmake_force
@@ -267,7 +281,7 @@ CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dm
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
 
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i: cmake_force
@@ -281,7 +295,7 @@ CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ex
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
 
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i: cmake_force
@@ -295,7 +309,7 @@ CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fl
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
 
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i: cmake_force
@@ -309,7 +323,7 @@ CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fl
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
 
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i: cmake_force
@@ -323,7 +337,7 @@ CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fl
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
 
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i: cmake_force
@@ -337,7 +351,7 @@ CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gp
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
 
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i: cmake_force
@@ -351,7 +365,7 @@ CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pw
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
 
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i: cmake_force
@@ -365,7 +379,7 @@ CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pw
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
 
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i: cmake_force
@@ -379,7 +393,7 @@ CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rc
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
 
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i: cmake_force
@@ -393,7 +407,7 @@ CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rc
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
 
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i: cmake_force
@@ -407,7 +421,7 @@ CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ti
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
 
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i: cmake_force
@@ -421,7 +435,7 @@ CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ti
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: CMakeFiles/NucleoMotor.elf.dir/flags.make
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: CMakeFiles/NucleoMotor.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj"
 	/opt/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj -MF CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj.d -o CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj -c /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
 
 CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.i: cmake_force
@@ -434,6 +448,7 @@ CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ua
 
 # Object files for target NucleoMotor.elf
 NucleoMotor_elf_OBJECTS = \
+"CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.obj" \
 "CMakeFiles/NucleoMotor.elf.dir/Core/Src/gpio.c.obj" \
 "CMakeFiles/NucleoMotor.elf.dir/Core/Src/main.c.obj" \
 "CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj" \
@@ -464,6 +479,7 @@ NucleoMotor_elf_OBJECTS = \
 # External object files for target NucleoMotor.elf
 NucleoMotor_elf_EXTERNAL_OBJECTS =
 
+NucleoMotor.elf: CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.obj
 NucleoMotor.elf: CMakeFiles/NucleoMotor.elf.dir/Core/Src/gpio.c.obj
 NucleoMotor.elf: CMakeFiles/NucleoMotor.elf.dir/Core/Src/main.c.obj
 NucleoMotor.elf: CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj
@@ -492,7 +508,7 @@ NucleoMotor.elf: CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src
 NucleoMotor.elf: CMakeFiles/NucleoMotor.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
 NucleoMotor.elf: CMakeFiles/NucleoMotor.elf.dir/build.make
 NucleoMotor.elf: CMakeFiles/NucleoMotor.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking C executable NucleoMotor.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking C executable NucleoMotor.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/NucleoMotor.elf.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/NucleoMotor.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/cmake-build-debug/NucleoMotor.bin"

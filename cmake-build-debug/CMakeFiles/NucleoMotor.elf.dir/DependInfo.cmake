@@ -30,6 +30,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/MotorDriver.c" "CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.obj" "gcc" "CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.obj.d"
   "/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/gpio.c" "CMakeFiles/NucleoMotor.elf.dir/Core/Src/gpio.c.obj" "gcc" "CMakeFiles/NucleoMotor.elf.dir/Core/Src/gpio.c.obj.d"
   "/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/main.c" "CMakeFiles/NucleoMotor.elf.dir/Core/Src/main.c.obj" "gcc" "CMakeFiles/NucleoMotor.elf.dir/Core/Src/main.c.obj.d"
   "/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Src/stm32f4xx_hal_msp.c" "CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj" "gcc" "CMakeFiles/NucleoMotor.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj.d"

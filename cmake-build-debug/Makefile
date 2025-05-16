@@ -129,6 +129,30 @@ NucleoMotor.elf/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NucleoMotor.elf.dir/build.make CMakeFiles/NucleoMotor.elf.dir/build
 .PHONY : NucleoMotor.elf/fast
 
+Core/Src/MotorDriver.obj: Core/Src/MotorDriver.c.obj
+.PHONY : Core/Src/MotorDriver.obj
+
+# target to build an object file
+Core/Src/MotorDriver.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NucleoMotor.elf.dir/build.make CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.obj
+.PHONY : Core/Src/MotorDriver.c.obj
+
+Core/Src/MotorDriver.i: Core/Src/MotorDriver.c.i
+.PHONY : Core/Src/MotorDriver.i
+
+# target to preprocess a source file
+Core/Src/MotorDriver.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NucleoMotor.elf.dir/build.make CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.i
+.PHONY : Core/Src/MotorDriver.c.i
+
+Core/Src/MotorDriver.s: Core/Src/MotorDriver.c.s
+.PHONY : Core/Src/MotorDriver.s
+
+# target to generate assembly for a file
+Core/Src/MotorDriver.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NucleoMotor.elf.dir/build.make CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.s
+.PHONY : Core/Src/MotorDriver.c.s
+
 Core/Src/gpio.obj: Core/Src/gpio.c.obj
 .PHONY : Core/Src/gpio.obj
 
@@ -746,6 +770,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... NucleoMotor.elf"
+	@echo "... Core/Src/MotorDriver.obj"
+	@echo "... Core/Src/MotorDriver.i"
+	@echo "... Core/Src/MotorDriver.s"
 	@echo "... Core/Src/gpio.obj"
 	@echo "... Core/Src/gpio.i"
 	@echo "... Core/Src/gpio.s"

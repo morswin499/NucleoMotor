@@ -99,6 +99,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  HAL_GPIO_WritePin(M1_IN1_GPIO_Port, M1_IN1_Pin | M1_IN3_Pin | M1_IN4_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(M1_IN1_GPIO_Port, M1_IN2_Pin, GPIO_PIN_SET);
+  HAL_TIM_Base_Start_IT(&htim1);
+   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+  __HAL_TIM_MOE_ENABLE(&htim1);
+  // __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3,1000 );
+
   while (1)
   {
     /* USER CODE END WHILE */

@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.obj"
+  "CMakeFiles/NucleoMotor.elf.dir/Core/Src/MotorDriver.c.obj.d"
   "CMakeFiles/NucleoMotor.elf.dir/Core/Src/gpio.c.obj"
   "CMakeFiles/NucleoMotor.elf.dir/Core/Src/gpio.c.obj.d"
   "CMakeFiles/NucleoMotor.elf.dir/Core/Src/main.c.obj"
