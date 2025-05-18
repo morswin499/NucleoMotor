@@ -40,4 +40,5 @@ CMakeFiles/NucleoMotor.elf.dir/Core/Src/main.c.obj: \
  /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Inc/tim.h \
  /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Inc/main.h \
  /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Inc/usart.h \
- /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Inc/gpio.h
+ /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Inc/gpio.h \
+ /Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Inc/MotorDriver.h
