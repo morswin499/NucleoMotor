@@ -93,6 +93,7 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM4_Init();
   MX_USART3_UART_Init();
+  MX_TIM5_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -103,8 +104,10 @@ int main(void)
   HAL_GPIO_WritePin(M1_IN1_GPIO_Port, M1_IN1_Pin | M1_IN3_Pin | M1_IN4_Pin, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(M1_IN1_GPIO_Port, M1_IN2_Pin, GPIO_PIN_SET);
   HAL_TIM_Base_Start(&htim1);
-   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
-  __HAL_TIM_MOE_ENABLE(&htim1);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
 
 
   while (1)
