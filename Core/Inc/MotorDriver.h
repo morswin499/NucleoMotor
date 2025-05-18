@@ -4,5 +4,5 @@
 
 #ifndef MOTORDRIVER_H
 #define MOTORDRIVER_H
-
+void forward(uint8_t speed);
 #endif //MOTORDRIVER_H
