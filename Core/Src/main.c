@@ -75,7 +75,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
       __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3,RxSteering.speed-relRatio);
       __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3,RxSteering.speed-relRatio);
     }
-    switch (RxSteering.direction) {
+    switch (RxSteering.direction)
+    {
       case 'F':
         forward(0);
         break;
@@ -84,15 +85,22 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
         break;
       default:
         stop();
+        break;
+
     }
+HAL_UART_Receive_IT(&huart3,RxBuffer,6);
 
 
-    HAL_UART_Receive_IT(&huart3,RxBuffer,6);
 
 
     //watchdog reset
 
   }
+}
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
+{
+
+  if( huart == &huart3 ) HAL_UART_Receive_IT(&huart3,RxBuffer,6);
 }
 /* USER CODE END PFP */
 
