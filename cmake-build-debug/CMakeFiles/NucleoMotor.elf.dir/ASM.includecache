@@ -6,5 +6,5 @@
 
 #IncludeRegexTransform: 
 
-/Users/morswin/STM32_projects/MiniMotorboard/NucleoMotor/Core/Startup/startup_stm32f446retx.s
+/home/mateusz/CLionProjects/NucleoMotor/Core/Startup/startup_stm32f446retx.s
 
