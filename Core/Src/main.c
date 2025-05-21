@@ -59,8 +59,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
     RxSteering.direction = RxBuffer[0];
     RxSteering.speed = (10*(RxBuffer[1]-48)+RxBuffer[2]-48)*10;
     RxSteering.turn=RxBuffer[3];
-    RxSteering.turn_ratio =(10*(RxBuffer[4]-48)+RxBuffer[5]-48)*10;
-    uint8_t relRatio = (uint8_t)RxSteering.turn_ratio/RxSteering.speed;
+    RxSteering.turn_ratio =(10*(RxBuffer[4]-48)+RxBuffer[5]-48);
+    uint16_t relRatio = (uint16_t)((RxSteering.turn_ratio/99)*RxSteering.speed);
     if(RxSteering.turn == 'R')
     {
       __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1,RxSteering.speed-relRatio);
@@ -144,7 +144,6 @@ int main(void)
   MX_TIM4_Init();
   MX_USART3_UART_Init();
   MX_TIM5_Init();
-  MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
 
 
