@@ -11,8 +11,8 @@ void turnRight(uint8_t speed);
 void stop();
 typedef struct steering {
     uint8_t direction;// Forwawd/Backward
-    uint8_t speed;
+    uint16_t speed;
     uint8_t turn;
-    uint8_t turn_ratio;
+    uint16_t turn_ratio;
 }steering;
 #endif //MOTORDRIVER_H

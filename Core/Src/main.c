@@ -57,18 +57,27 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
   if(huart == &huart3)
   {
     RxSteering.direction = RxBuffer[0];
-    RxSteering.speed = (10*RxBuffer[1]+RxBuffer[2])*10;
+    RxSteering.speed = (10*(RxBuffer[1]-48)+RxBuffer[2]-48)*10;
     RxSteering.turn=RxBuffer[3];
-    RxSteering.turn_ratio =(10*RxBuffer[4]+RxBuffer[5]);
-
+    RxSteering.turn_ratio =(10*(RxBuffer[4]-48)+RxBuffer[5]-48)*10;
+    uint8_t relRatio = (uint8_t)RxSteering.turn_ratio/RxSteering.speed;
+    if(RxSteering.turn == 'R')
+    {
+      __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1,RxSteering.speed-relRatio);
+      __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2,RxSteering.speed-relRatio);
+      __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3,RxSteering.speed);
+      __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3,RxSteering.speed);
+    }
+    if(RxSteering.turn == 'L')
+    {
+      __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1,RxSteering.speed);
+      __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2,RxSteering.speed);
+      __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3,RxSteering.speed-relRatio);
+      __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3,RxSteering.speed-relRatio);
+    }
     switch (RxSteering.direction) {
       case 'F':
         forward(0);
-        if(RxSteering.turn == 'R')
-        __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1,RxSteering.speed);
-        __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2,RxSteering.speed);
-        __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3,RxSteering.speed);
-
         break;
       case 'B':
         backward(0);
@@ -127,6 +136,7 @@ int main(void)
   MX_TIM4_Init();
   MX_USART3_UART_Init();
   MX_TIM5_Init();
+  MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
 
 
