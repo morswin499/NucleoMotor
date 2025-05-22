@@ -83,10 +83,12 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
     	switch (RxSteering.turn)
     	    {
     	      case 'R':
-    	        turnRight(0);
+    	    	if(RxSteering.direction == 'F')turnRight(0);
+    	    	if(RxSteering.direction == 'B')turnLeft(0);
     	        break;
     	      case 'L':
-    	        turnLeft(0);
+    	    	if(RxSteering.direction == 'F')turnLeft(0);
+    	    	if(RxSteering.direction == 'B')turnRight(0);
     	        break;
     	      default:
     	        stop();
@@ -152,6 +154,7 @@ int main(void)
   MX_USART3_UART_Init();
   MX_TIM5_Init();
   MX_TIM9_Init();
+  MX_TIM10_Init();
   /* USER CODE BEGIN 2 */
 
 
@@ -169,7 +172,9 @@ int main(void)
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
   HAL_UART_Receive_IT(&huart3,RxBuffer,6);
   HAL_TIM_Base_Start_IT(&htim9);
+  HAL_TIM_Base_Start_IT(&htim10);
   HAL_NVIC_EnableIRQ(TIM1_BRK_TIM9_IRQn);
+  HAL_NVIC_EnableIRQ(TIM1_UP_TIM10_IRQn);
   while (1)
   {
     /* USER CODE END WHILE */

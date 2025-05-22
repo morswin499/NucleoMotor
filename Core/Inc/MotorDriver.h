@@ -9,6 +9,7 @@ void backward(uint8_t speed);
 void turnLeft(uint8_t speed);
 void turnRight(uint8_t speed);
 void stop();
+void setPWM(uint16_t L,uint16_t R);
 typedef struct steering {
     uint8_t direction;// Forwawd/Backward
     uint16_t speed;

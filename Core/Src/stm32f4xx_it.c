@@ -20,14 +20,19 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f4xx_it.h"
-#include "MotorDriver.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "MotorDriver.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
 extern uint8_t RxBuffer[6];
+extern uint16_t currPWM_L;
+extern uint16_t currPWM_R;
+extern uint16_t sPWM_L;
+extern uint16_t sPWM_R;
 /* USER CODE END TD */
 
 /* Private define ------------------------------------------------------------*/
@@ -58,6 +63,7 @@ extern uint8_t RxBuffer[6];
 /* External variables --------------------------------------------------------*/
 extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim9;
+extern TIM_HandleTypeDef htim10;
 extern UART_HandleTypeDef huart3;
 /* USER CODE BEGIN EV */
 
@@ -224,9 +230,29 @@ void TIM1_BRK_TIM9_IRQHandler(void)
 void TIM1_UP_TIM10_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM1_UP_TIM10_IRQn 0 */
-
+	if(currPWM_L + 10< sPWM_L)
+	{
+		currPWM_L += 10;
+	}
+	else if(currPWM_L - 10 > sPWM_L)
+	{
+		currPWM_L -= 10;
+	}
+	if(currPWM_R + 10< sPWM_R)
+	{
+		currPWM_R += 10;
+	}
+	else if(currPWM_R - 10 > sPWM_R)
+	{
+		currPWM_R -= 10;
+	}
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1,currPWM_R);
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2,currPWM_R);
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3,currPWM_L);
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4,currPWM_L);
   /* USER CODE END TIM1_UP_TIM10_IRQn 0 */
   HAL_TIM_IRQHandler(&htim1);
+  HAL_TIM_IRQHandler(&htim10);
   /* USER CODE BEGIN TIM1_UP_TIM10_IRQn 1 */
 
   /* USER CODE END TIM1_UP_TIM10_IRQn 1 */
