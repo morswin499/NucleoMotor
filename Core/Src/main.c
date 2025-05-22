@@ -47,6 +47,7 @@
 /* USER CODE BEGIN PV */
 uint8_t RxBuffer[6];
 volatile steering RxSteering;
+uint16_t relRatio = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -60,36 +61,42 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
     RxSteering.speed = (10*(RxBuffer[1]-48)+RxBuffer[2]-48)*10;
     RxSteering.turn=RxBuffer[3];
     RxSteering.turn_ratio =(10*(RxBuffer[4]-48)+RxBuffer[5]-48);
-    uint16_t relRatio =((RxSteering.turn_ratio/99.0)*RxSteering.speed);
-    if(RxSteering.turn == 'R')
-    {
-      __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1,RxSteering.speed-relRatio);
-      __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2,RxSteering.speed-relRatio);
-      __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3,RxSteering.speed);
-      __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4,RxSteering.speed);
-    }
-    if(RxSteering.turn == 'L')
-    {
-      __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1,RxSteering.speed);
-      __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2,RxSteering.speed);
-      __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3,RxSteering.speed-relRatio);
-      __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4,RxSteering.speed-relRatio);
-    }
-    switch (RxSteering.direction)
-    {
-      case 'F':
-        forward(0);
-        break;
-      case 'B':
-        backward(0);
-        break;
-      default:
-        stop();
-        break;
+    relRatio =((RxSteering.turn_ratio/99.0)*RxSteering.speed);
 
+    if(RxSteering.turn_ratio == 0)
+    {
+    	switch (RxSteering.direction)
+    	    {
+    	      case 'F':
+    	        forward(0);
+    	        break;
+    	      case 'B':
+    	        backward(0);
+    	        break;
+    	      default:
+    	        stop();
+    	        break;
+
+    	    }
     }
+    else {
+    	switch (RxSteering.turn)
+    	    {
+    	      case 'R':
+    	        turnRight(0);
+    	        break;
+    	      case 'L':
+    	        turnLeft(0);
+    	        break;
+    	      default:
+    	        stop();
+    	        break;
+
+    	    }
+    }
+
 HAL_UART_Receive_IT(&huart3,RxBuffer,6);
-
+__HAL_TIM_SET_COUNTER(&htim9, 0);
 
 
 
@@ -144,6 +151,7 @@ int main(void)
   MX_TIM4_Init();
   MX_USART3_UART_Init();
   MX_TIM5_Init();
+  MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
 
 
@@ -160,7 +168,8 @@ int main(void)
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
   HAL_UART_Receive_IT(&huart3,RxBuffer,6);
-
+  HAL_TIM_Base_Start_IT(&htim9);
+  HAL_NVIC_EnableIRQ(TIM1_BRK_TIM9_IRQn);
   while (1)
   {
     /* USER CODE END WHILE */

@@ -20,13 +20,14 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f4xx_it.h"
+#include "MotorDriver.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
-
+extern uint8_t RxBuffer[6];
 /* USER CODE END TD */
 
 /* Private define ------------------------------------------------------------*/
@@ -56,6 +57,7 @@
 
 /* External variables --------------------------------------------------------*/
 extern TIM_HandleTypeDef htim1;
+extern TIM_HandleTypeDef htim9;
 extern UART_HandleTypeDef huart3;
 /* USER CODE BEGIN EV */
 
@@ -208,8 +210,11 @@ void TIM1_BRK_TIM9_IRQHandler(void)
 
   /* USER CODE END TIM1_BRK_TIM9_IRQn 0 */
   HAL_TIM_IRQHandler(&htim1);
+  HAL_TIM_IRQHandler(&htim9);
   /* USER CODE BEGIN TIM1_BRK_TIM9_IRQn 1 */
-
+  stop();
+  HAL_UART_AbortReceive_IT(&huart3);
+  HAL_UART_Receive_IT(&huart3,RxBuffer,6);
   /* USER CODE END TIM1_BRK_TIM9_IRQn 1 */
 }
 
