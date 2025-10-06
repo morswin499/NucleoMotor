@@ -21,6 +21,8 @@ void motor_str_init(motor_str *m, TIM_HandleTypeDef *tim, motor_name Name)
 
 void motor_calculate_speed(motor_str *m)
 {
+	int speed;
+	l289n_Direction dir;
 	motor_update_count(m);
 	m->measured_speed = (m->pulse_count * TIMER_FREQ * SECOND_IN_MINUTE)/m->resolution;
 
@@ -31,13 +33,44 @@ void motor_calculate_speed(motor_str *m)
 
 	if(m->actual_PWM >= 0)
 	{
-		l289n_set_motorB_direction(CW);
-		l289n_set_motorB_speed(m->actual_PWM);
+		dir = CW;
+		speed = m->actual_PWM;
 	}
 	else
 	{
-		l289n_set_motorB_direction(CCW);
-		l289n_set_motorB_speed(-m->actual_PWM);
+		dir = CCW;
+		speed = - m->actual_PWM;
+	}
+
+	switch(m->name)
+	{
+	case A:
+		l289n_set_motorA_direction(dir);
+		l289n_set_motorA_speed(speed);
+		return;
+	case B:
+		l289n_set_motorB_direction(dir);
+		l289n_set_motorB_speed(speed);
+		return;
+	case C:
+		l289n_set_motorC_direction(dir);
+		l289n_set_motorC_speed(speed);
+		return;
+	case D:
+		l289n_set_motorD_direction(dir);
+		l289n_set_motorD_speed(speed);
+		return;
+	default:
+		return;
+	}
+
+}
+
+void motors_calculate_speed(motor_str* motors[], uint8_t number_of_motors)
+{
+	for (int i =0; i<number_of_motors; i++)
+	{
+		motor_calculate_speed(motors[i]);
 	}
 }
 

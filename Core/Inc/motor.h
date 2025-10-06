@@ -48,5 +48,6 @@ void motor_str_init(motor_str *m, TIM_HandleTypeDef *tim,motor_name Name);
 void motor_calculate_speed(motor_str *m);
 void motor_update_count(motor_str *m);
 void motor_set_speed(motor_str *m, int set_speed);
+void motor_set_speed(motor_str *m, int set_speed);
 
 #endif /* INC_MOTOR_H_ */
