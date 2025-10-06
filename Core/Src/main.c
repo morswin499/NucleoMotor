@@ -48,6 +48,8 @@
 uint8_t RxBuffer[6];
 volatile steering RxSteering;
 uint16_t relRatio = 0;
+volatile int32_t curr_pos;
+volatile int32_t delta;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -155,6 +157,8 @@ int main(void)
   MX_TIM5_Init();
   MX_TIM9_Init();
   MX_TIM10_Init();
+  MX_TIM6_Init();
+  MX_TIM11_Init();
   /* USER CODE BEGIN 2 */
 
 
@@ -175,6 +179,7 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim10);
   HAL_NVIC_EnableIRQ(TIM1_BRK_TIM9_IRQn);
   HAL_NVIC_EnableIRQ(TIM1_UP_TIM10_IRQn);
+  HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
   while (1)
   {
     /* USER CODE END WHILE */
