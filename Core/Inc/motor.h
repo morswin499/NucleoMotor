@@ -14,7 +14,7 @@
 #include <stdint.h>
 
 #define RESOLUTION	1200
-#define TIMER_FREQ	10
+#define TIMER_FREQ	50
 #define SECOND_IN_MINUTE 60
 
 #define MOTOR_A_Kp					1
@@ -65,6 +65,7 @@ typedef struct
 
 void motor_str_init(motor_str *m, TIM_HandleTypeDef *tim,motor_name Name);
 void motor_calculate_speed(motor_str *m);
+void motors_calculate_speed(motor_str* motors[], uint8_t number_of_motors);
 void motor_update_count(motor_str *m);
 void motor_set_speed(motor_str *m, int set_speed);
 void motor_set_speed(motor_str *m, int set_speed);

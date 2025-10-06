@@ -25,6 +25,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "MotorDriver.h"
+#include "motor.h"
+#include "pid.h"
+#include "l289n.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -50,6 +53,7 @@ volatile steering RxSteering;
 uint16_t relRatio = 0;
 volatile int32_t curr_pos;
 volatile int32_t delta;
+volatile motor_str motors[NUMBER_OF_MOTORS];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/

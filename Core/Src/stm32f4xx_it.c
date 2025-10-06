@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "MotorDriver.h"
+#include "motor.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -32,6 +33,7 @@ extern uint16_t currPWM_L;
 extern uint16_t currPWM_R;
 extern uint16_t sPWM_L;
 extern uint16_t sPWM_R;
+extern volatile motor_str motors[NUMBER_OF_MOTORS];
 /* USER CODE END TD */
 
 /* Private define ------------------------------------------------------------*/
@@ -61,7 +63,6 @@ extern uint16_t sPWM_R;
 
 /* External variables --------------------------------------------------------*/
 extern TIM_HandleTypeDef htim1;
-extern TIM_HandleTypeDef htim2;
 extern TIM_HandleTypeDef htim6;
 extern TIM_HandleTypeDef htim9;
 extern TIM_HandleTypeDef htim10;
@@ -313,7 +314,7 @@ void USART3_IRQHandler(void)
 void TIM6_DAC_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM6_DAC_IRQn 0 */
-
+	motors_calculate_speed(motors,NUMBER_OF_MOTORS );
   /* USER CODE END TIM6_DAC_IRQn 0 */
   HAL_TIM_IRQHandler(&htim6);
   /* USER CODE BEGIN TIM6_DAC_IRQn 1 */
