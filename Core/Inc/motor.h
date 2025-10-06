@@ -17,10 +17,28 @@
 #define TIMER_FREQ	10
 #define SECOND_IN_MINUTE 60
 
+#define MOTOR_A_Kp					1
+#define MOTOR_A_Ki					0
+#define MOTOR_A_Kd					5
+#define MOTOR_A_ANTI_WINDUP			1000
+
 #define MOTOR_B_Kp					1
 #define MOTOR_B_Ki					0
 #define MOTOR_B_Kd					5
 #define MOTOR_B_ANTI_WINDUP			1000
+
+#define MOTOR_C_Kp					1
+#define MOTOR_C_Ki					0
+#define MOTOR_C_Kd					5
+#define MOTOR_C_ANTI_WINDUP			1000
+
+#define MOTOR_D_Kp					1
+#define MOTOR_D_Ki					0
+#define MOTOR_D_Kd					5
+#define MOTOR_D_ANTI_WINDUP			1000
+
+#define NUMBER_OF_MOTORS			4
+
 typedef enum
 {
 	A = 0,
@@ -28,6 +46,7 @@ typedef enum
 	C = 2,
 	D = 3
 }motor_name;
+
 typedef struct
 {
 	TIM_HandleTypeDef *timer;
@@ -47,6 +66,7 @@ typedef struct
 void motor_str_init(motor_str *m, TIM_HandleTypeDef *tim,motor_name Name);
 void motor_calculate_speed(motor_str *m);
 void motor_update_count(motor_str *m);
+void motor_set_speed(motor_str *m, int set_speed);
 void motor_set_speed(motor_str *m, int set_speed);
 
 #endif /* INC_MOTOR_H_ */
