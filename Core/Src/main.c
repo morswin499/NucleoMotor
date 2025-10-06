@@ -48,7 +48,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t RxBuffer[6];
+uint8_t RxBuffer[8];
 volatile steering RxSteering;
 uint16_t relRatio = 0;
 volatile int32_t curr_pos;
@@ -63,45 +63,19 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
   if(huart == &huart3)
   {
-    RxSteering.direction = RxBuffer[0];
-    RxSteering.speed = (10*(RxBuffer[1]-48)+RxBuffer[2]-48)*10;
-    RxSteering.turn=RxBuffer[3];
-    RxSteering.turn_ratio =(10*(RxBuffer[4]-48)+RxBuffer[5]-48);
-    relRatio =((RxSteering.turn_ratio/99.0)*RxSteering.speed);
-
-    if(RxSteering.turn_ratio == 0)
+    RxSteering.leftSpeed = (100*(RxBuffer[0]-48) + 10*(RxBuffer[1]-48)+RxBuffer[2]-48)*10;
+    RxSteering.rightSpeed = (100*(RxBuffer[3]-48) + 10*(RxBuffer[4]-48)+RxBuffer[5]-48)*10;
+    if(RxBuffer[6] - 48) // ujemna lewa
     {
-    	switch (RxSteering.direction)
-    	    {
-    	      case 'F':
-    	        forward(0);
-    	        break;
-    	      case 'B':
-    	        backward(0);
-    	        break;
-    	      default:
-    	        stop();
-    	        break;
-
-    	    }
+    	RxSteering.leftSpeed *= -1;
     }
-    else {
-    	switch (RxSteering.turn)
-    	    {
-    	      case 'R':
-    	    	if(RxSteering.direction == 'F')turnRight(0);
-    	    	if(RxSteering.direction == 'B')turnLeft(0);
-    	        break;
-    	      case 'L':
-    	    	if(RxSteering.direction == 'F')turnLeft(0);
-    	    	if(RxSteering.direction == 'B')turnRight(0);
-    	        break;
-    	      default:
-    	        stop();
-    	        break;
-
-    	    }
+    if(RxBuffer[7] - 48) //ujemna prawa
+    {
+        RxSteering.rightSpeed *= -1;
     }
+    motor_set_speed(&motors[0], RxSteering.leftSpeed);
+    motor_set_speed(&motors[1], RxSteering.rightSpeed);
+
 
 HAL_UART_Receive_IT(&huart3,RxBuffer,6);
 __HAL_TIM_SET_COUNTER(&htim9, 0);
@@ -171,18 +145,25 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-  HAL_GPIO_WritePin(M1_IN1_GPIO_Port, M1_IN1_Pin | M1_IN3_Pin | M1_IN4_Pin, GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(M1_IN1_GPIO_Port, M1_IN2_Pin, GPIO_PIN_SET);
-  HAL_TIM_Base_Start(&htim1);
-  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
-  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
-  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
-  HAL_UART_Receive_IT(&huart3,RxBuffer,6);
-  HAL_TIM_Base_Start_IT(&htim9);
-  HAL_TIM_Base_Start_IT(&htim10);
-  HAL_NVIC_EnableIRQ(TIM1_BRK_TIM9_IRQn);
-  HAL_NVIC_EnableIRQ(TIM1_UP_TIM10_IRQn);
+//  HAL_GPIO_WritePin(M1_IN1_GPIO_Port, M1_IN1_Pin | M1_IN3_Pin | M1_IN4_Pin, GPIO_PIN_RESET);
+//  HAL_GPIO_WritePin(M1_IN1_GPIO_Port, M1_IN2_Pin, GPIO_PIN_SET);
+//  HAL_TIM_Base_Start(&htim1);
+//  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+//  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+//  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+//  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+//  HAL_UART_Receive_IT(&huart3,RxBuffer,6);
+//  HAL_TIM_Base_Start_IT(&htim6);
+//  HAL_TIM_Base_Start_IT(&htim9);
+//  HAL_TIM_Base_Start_IT(&htim10);
+//  HAL_NVIC_EnableIRQ(TIM1_BRK_TIM9_IRQn);
+//  HAL_NVIC_EnableIRQ(TIM1_UP_TIM10_IRQn);
+  l289n_init();
+  motor_str_init(&motors[0], &htim2, A);
+  motor_str_init(&motors[1], &htim3, B);
+  pid_init(&motors[0].pid_controller, MOTOR_A_Kp, MOTOR_A_Ki, MOTOR_A_Kd, MOTOR_A_ANTI_WINDUP);
+  pid_init(&motors[1].pid_controller, MOTOR_B_Kp, MOTOR_B_Ki, MOTOR_B_Kd, MOTOR_B_ANTI_WINDUP);
+  HAL_TIM_Base_Start_IT(&htim6);
   HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
   while (1)
   {

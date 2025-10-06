@@ -221,9 +221,9 @@ void TIM1_BRK_TIM9_IRQHandler(void)
   HAL_TIM_IRQHandler(&htim1);
   HAL_TIM_IRQHandler(&htim9);
   /* USER CODE BEGIN TIM1_BRK_TIM9_IRQn 1 */
-  stop();
-  HAL_UART_AbortReceive_IT(&huart3);
-  HAL_UART_Receive_IT(&huart3,RxBuffer,6);
+  //stop();
+//  HAL_UART_AbortReceive_IT(&huart3);
+//  HAL_UART_Receive_IT(&huart3,RxBuffer,8);
   /* USER CODE END TIM1_BRK_TIM9_IRQn 1 */
 }
 
@@ -233,33 +233,14 @@ void TIM1_BRK_TIM9_IRQHandler(void)
 void TIM1_UP_TIM10_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM1_UP_TIM10_IRQn 0 */
-	if(currPWM_L + 10< sPWM_L)
-	{
-		currPWM_L += 10;
-	}
-	else if(currPWM_L - 10 > sPWM_L)
-	{
-		currPWM_L -= 10;
-	}
-	if(currPWM_R + 10< sPWM_R)
-	{
-		currPWM_R += 10;
-	}
-	else if(currPWM_R - 10 > sPWM_R)
-	{
-		currPWM_R -= 10;
-	}
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1,currPWM_R);
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2,currPWM_R);
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3,currPWM_L);
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4,currPWM_L);
+
   /* USER CODE END TIM1_UP_TIM10_IRQn 0 */
   HAL_TIM_IRQHandler(&htim1);
   HAL_TIM_IRQHandler(&htim10);
   /* USER CODE BEGIN TIM1_UP_TIM10_IRQn 1 */
-  int32_t position = __HAL_TIM_GET_COUNTER(&htim2);
+  /*int32_t position = __HAL_TIM_GET_COUNTER(&htim2);
   	__HAL_TIM_SET_COUNTER(&htim2, 0);
-  	if(position)position++;
+  	if(position)position++;*/
   /* USER CODE END TIM1_UP_TIM10_IRQn 1 */
 }
 

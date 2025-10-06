@@ -47,10 +47,14 @@ void motor_calculate_speed(motor_str *m)
 	case A:
 		l289n_set_motorA_direction(dir);
 		l289n_set_motorA_speed(speed);
+		l289n_set_motorC_direction(dir);
+		l289n_set_motorC_speed(speed);
 		return;
 	case B:
 		l289n_set_motorB_direction(dir);
 		l289n_set_motorB_speed(speed);
+		l289n_set_motorD_direction(dir);
+		l289n_set_motorD_speed(speed);
 		return;
 	case C:
 		l289n_set_motorC_direction(dir);
