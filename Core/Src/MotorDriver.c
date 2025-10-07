@@ -61,18 +61,19 @@ void turnRight(uint8_t speed)
 	HAL_GPIO_WritePin(M2_IN4_GPIO_Port, M2_IN4_Pin, GPIO_PIN_RESET);
 	setPWM(RxSteering.speed,relRatio);
 
-}
-void stop()
-{
-	HAL_GPIO_WritePin(M1_IN1_GPIO_Port, M1_IN1_Pin, GPIO_PIN_SET);//all motors soft stop
-	HAL_GPIO_WritePin(M1_IN2_GPIO_Port, M1_IN2_Pin, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(M1_IN3_GPIO_Port, M1_IN3_Pin, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(M1_IN4_GPIO_Port, M1_IN4_Pin, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(M2_IN1_GPIO_Port, M2_IN1_Pin, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(M2_IN2_GPIO_Port, M2_IN2_Pin, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(M2_IN3_GPIO_Port, M2_IN3_Pin, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(M2_IN4_GPIO_Port, M2_IN4_Pin, GPIO_PIN_SET);
-}
+}*/
+//void stop()
+//{
+//	HAL_GPIO_WritePin(M1_IN1_GPIO_Port, M1_IN1_Pin, GPIO_PIN_SET);//all motors soft stop
+//	HAL_GPIO_WritePin(M1_IN2_GPIO_Port, M1_IN2_Pin, GPIO_PIN_SET);
+//	HAL_GPIO_WritePin(M1_IN3_GPIO_Port, M1_IN3_Pin, GPIO_PIN_SET);
+//	HAL_GPIO_WritePin(M1_IN4_GPIO_Port, M1_IN4_Pin, GPIO_PIN_SET);
+//	HAL_GPIO_WritePin(M2_IN1_GPIO_Port, M2_IN1_Pin, GPIO_PIN_SET);
+//	HAL_GPIO_WritePin(M2_IN2_GPIO_Port, M2_IN2_Pin, GPIO_PIN_SET);
+//	HAL_GPIO_WritePin(M2_IN3_GPIO_Port, M2_IN3_Pin, GPIO_PIN_SET);
+//	HAL_GPIO_WritePin(M2_IN4_GPIO_Port, M2_IN4_Pin, GPIO_PIN_SET);
+//}
+/*
 void setPWM(uint16_t L,uint16_t R)
 {
 	sPWM_L = L;

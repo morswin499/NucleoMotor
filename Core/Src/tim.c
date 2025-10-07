@@ -21,7 +21,11 @@
 #include "tim.h"
 
 /* USER CODE BEGIN 0 */
-
+#include "motor.h"
+#include "MotorDriver.h"
+extern uint8_t RxBuffer[8];
+extern volatile motor_str motors[NUMBER_OF_MOTORS];
+extern UART_HandleTypeDef huart3;
 /* USER CODE END 0 */
 
 TIM_HandleTypeDef htim1;
@@ -847,5 +851,18 @@ void HAL_TIM_Encoder_MspDeInit(TIM_HandleTypeDef* tim_encoderHandle)
 }
 
 /* USER CODE BEGIN 1 */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if(htim->Instance == TIM6)
+	{
+		motors_calculate_speed(motors,NUMBER_OF_MOTORS);
+	}
+	if(htim->Instance == TIM9)
+	{
+		//stop();
+		HAL_UART_AbortReceive_IT(&huart3);
+		HAL_UART_Receive_IT(&huart3,RxBuffer,8);
+	}
 
+}
 /* USER CODE END 1 */
