@@ -85,7 +85,7 @@ void l289n_set_motorA_speed(uint16_t speed)
 {
 	if (speed >= htim1.Instance->ARR)
 		speed = htim1.Instance->ARR;
-	__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_1, speed);
+	__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_4, speed);
 }
 void l289n_set_motorC_speed(uint16_t speed)
 {
@@ -97,7 +97,7 @@ void l289n_set_motorD_speed(uint16_t speed)
 {
 	if (speed >= htim1.Instance->ARR)
 		speed = htim1.Instance->ARR;
-	__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_4, speed);
+	__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_1, speed);
 }
 void l289n_init()
 {

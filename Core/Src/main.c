@@ -165,6 +165,7 @@ int main(void)
   pid_init(&motors[1].pid_controller, MOTOR_B_Kp, MOTOR_B_Ki, MOTOR_B_Kd, MOTOR_B_ANTI_WINDUP);
   HAL_TIM_Base_Start_IT(&htim6);
   HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
+  HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
   while (1)
   {
     /* USER CODE END WHILE */
