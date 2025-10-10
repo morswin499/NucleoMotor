@@ -70,11 +70,11 @@ void motor_calculate_speed(motor_str *m)
 
 }
 
-void motors_calculate_speed(motor_str* motors[], uint8_t number_of_motors)
+void motors_calculate_speed(motor_str motors[], uint8_t number_of_motors)
 {
 	for (int i =0; i<number_of_motors; i++)
 	{
-		motor_calculate_speed(motors[i]);
+		motor_calculate_speed(&motors[i]);
 	}
 }
 
