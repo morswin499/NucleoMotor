@@ -63,8 +63,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
   if(huart == &huart3)
   {
-    RxSteering.leftSpeed = (100*(RxBuffer[0]-48) + 10*(RxBuffer[1]-48)+RxBuffer[2]-48)*10;
-    RxSteering.rightSpeed = (100*(RxBuffer[3]-48) + 10*(RxBuffer[4]-48)+RxBuffer[5]-48)*10;
+    RxSteering.leftSpeed = (100*(RxBuffer[0]-48) + 10*(RxBuffer[1]-48)+RxBuffer[2]-48);
+    RxSteering.rightSpeed = (100*(RxBuffer[3]-48) + 10*(RxBuffer[4]-48)+RxBuffer[5]-48);
     if(RxBuffer[6] - 48) // ujemna lewa
     {
     	RxSteering.leftSpeed *= -1;
@@ -73,8 +73,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
     {
         RxSteering.rightSpeed *= -1;
     }
-    motor_set_speed(&motors[0], RxSteering.leftSpeed);
-    motor_set_speed(&motors[1], RxSteering.rightSpeed);
+   // motor_set_speed(&motors[0], RxSteering.leftSpeed);
+    //motor_set_speed(&motors[1], RxSteering.rightSpeed);
 
 
 HAL_UART_Receive_IT(&huart3,RxBuffer,8);
@@ -162,11 +162,21 @@ int main(void)
   l289n_init();
   motor_str_init(&motors[0], &htim2, A);
   motor_str_init(&motors[1], &htim3, B);
-  pid_init(&motors[0].pid_controller, MOTOR_A_Kp, MOTOR_A_Ki, MOTOR_A_Kd, MOTOR_A_ANTI_WINDUP);
-  pid_init(&motors[1].pid_controller, MOTOR_B_Kp, MOTOR_B_Ki, MOTOR_B_Kd, MOTOR_B_ANTI_WINDUP);
+  //pid_init(&motors[0].pid_controller, MOTOR_A_Kp, MOTOR_A_Ki, MOTOR_A_Kd, MOTOR_A_ANTI_WINDUP);
+  //pid_init(&motors[1].pid_controller, MOTOR_B_Kp, MOTOR_B_Ki, MOTOR_B_Kd, MOTOR_B_ANTI_WINDUP);
   HAL_TIM_Base_Start_IT(&htim6);
   HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
   HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
+
+  l289n_set_motorA_speed(500);
+  l289n_set_motorA_direction(CW);
+  HAL_Delay(5000);
+  l289n_set_motorA_direction(CCW);
+  HAL_Delay(5000);
+  l289n_set_motorA_speed(0);
+
+
+
   while (1)
   {
     /* USER CODE END WHILE */
