@@ -15,12 +15,12 @@ void l289n_set_motorB_direction(l289n_Direction dir)
 	switch(dir)
 	{
 	case CW:
-		HAL_GPIO_WritePin(M1_IN3_GPIO_Port, M1_IN3_Pin, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(M1_IN4_GPIO_Port, M1_IN4_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(MB_IN1_GPIO_Port, MB_IN1_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(MB_IN2_GPIO_Port, MB_IN2_Pin, GPIO_PIN_RESET);
 		break;
 	case CCW:
-		HAL_GPIO_WritePin(M1_IN3_GPIO_Port, M1_IN3_Pin, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(M1_IN4_GPIO_Port, M1_IN4_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(MB_IN1_GPIO_Port, MB_IN1_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(MB_IN2_GPIO_Port, MB_IN2_Pin, GPIO_PIN_SET);
 		break;
 	default:
 		break;
@@ -31,12 +31,12 @@ void l289n_set_motorA_direction(l289n_Direction dir)
 	switch(dir)
 	{
 	case CW:
-		HAL_GPIO_WritePin(M2_IN1_GPIO_Port, M2_IN1_Pin, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(M2_IN2_GPIO_Port, M2_IN2_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(MA_IN1_GPIO_Port, MA_IN1_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(MA_IN2_GPIO_Port, MA_IN2_Pin, GPIO_PIN_RESET);
 		break;
 	case CCW:
-		HAL_GPIO_WritePin(M2_IN1_GPIO_Port, M2_IN1_Pin, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(M2_IN2_GPIO_Port, M2_IN2_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(MA_IN1_GPIO_Port, MA_IN1_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(MA_IN2_GPIO_Port, MA_IN2_Pin, GPIO_PIN_SET);
 		break;
 	default:
 		break;
@@ -47,12 +47,12 @@ void l289n_set_motorC_direction(l289n_Direction dir)
 	switch(dir)
 	{
 	case CW:
-		HAL_GPIO_WritePin(M2_IN3_GPIO_Port, M2_IN3_Pin, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(M2_IN4_GPIO_Port, M2_IN4_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(MC_IN1_GPIO_Port, MC_IN1_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(MC_IN2_GPIO_Port, MC_IN2_Pin, GPIO_PIN_RESET);
 		break;
 	case CCW:
-		HAL_GPIO_WritePin(M2_IN3_GPIO_Port, M2_IN3_Pin, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(M2_IN4_GPIO_Port, M2_IN4_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(MC_IN1_GPIO_Port, MC_IN1_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(MC_IN2_GPIO_Port, MC_IN2_Pin, GPIO_PIN_SET);
 		break;
 	default:
 		break;
@@ -63,12 +63,12 @@ void l289n_set_motorD_direction(l289n_Direction dir)
 	switch(dir)
 	{
 	case CW:
-		HAL_GPIO_WritePin(M1_IN1_GPIO_Port, M1_IN1_Pin, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(M1_IN2_GPIO_Port, M1_IN2_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(MD_IN1_GPIO_Port, MD_IN1_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(MD_IN2_GPIO_Port, MD_IN2_Pin, GPIO_PIN_RESET);
 		break;
 	case CCW:
-		HAL_GPIO_WritePin(M1_IN1_GPIO_Port, M1_IN1_Pin, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(M1_IN2_GPIO_Port, M1_IN2_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(MD_IN1_GPIO_Port, MD_IN1_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(MD_IN2_GPIO_Port, MD_IN2_Pin, GPIO_PIN_SET);
 		break;
 	default:
 		break;
