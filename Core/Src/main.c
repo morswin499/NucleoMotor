@@ -57,7 +57,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
   if(huart == &huart3)
   {
-    RxSteering.direction = RxBuffer[0];
+    /*RxSteering.direction = RxBuffer[0];
     RxSteering.speed = (10*(RxBuffer[1]-48)+RxBuffer[2]-48)*10;
     RxSteering.turn=RxBuffer[3];
     RxSteering.turn_ratio =(10*(RxBuffer[4]-48)+RxBuffer[5]-48);
@@ -95,8 +95,18 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
     	        break;
 
     	    }
-    }
-
+    }*/
+	int16_t leftSpeed = RxBuffer[0];
+	int16_t rightSpeed = RxBuffer[1];
+	if(RxBuffer[2] == 1)
+	{
+		leftSpeed *= -1;
+	}
+	if(RxBuffer[3] == 1)
+	{
+		rightSpeed *= -1;
+	}
+	differencialSteering(leftSpeed*10, rightSpeed*10);
 HAL_UART_Receive_IT(&huart3,RxBuffer,6);
 __HAL_TIM_SET_COUNTER(&htim9, 0);
 

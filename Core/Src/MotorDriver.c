@@ -72,6 +72,36 @@ void stop()
 	HAL_GPIO_WritePin(M2_IN3_GPIO_Port, M2_IN3_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(M2_IN4_GPIO_Port, M2_IN4_Pin, GPIO_PIN_SET);
 }
+void differencialSteering(int16_t leftSpeed, int16_t rightSpeed)
+{
+	if(leftSpeed >= 0)
+	{
+		HAL_GPIO_WritePin(M2_IN1_GPIO_Port, M2_IN1_Pin, GPIO_PIN_RESET);//left side counterclockwise
+		HAL_GPIO_WritePin(M2_IN2_GPIO_Port, M2_IN2_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(M2_IN3_GPIO_Port, M2_IN3_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(M2_IN4_GPIO_Port, M2_IN4_Pin, GPIO_PIN_RESET);
+	}
+	else {
+		HAL_GPIO_WritePin(M2_IN1_GPIO_Port, M2_IN1_Pin, GPIO_PIN_SET);//left side clockwise
+		HAL_GPIO_WritePin(M2_IN2_GPIO_Port, M2_IN2_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(M2_IN3_GPIO_Port, M2_IN3_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(M2_IN4_GPIO_Port, M2_IN4_Pin, GPIO_PIN_SET);
+	}
+	if(rightSpeed >= 0)
+	{
+		HAL_GPIO_WritePin(M1_IN1_GPIO_Port, M1_IN1_Pin, GPIO_PIN_SET);//right side clockwise
+		HAL_GPIO_WritePin(M1_IN2_GPIO_Port, M1_IN2_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(M1_IN3_GPIO_Port, M1_IN3_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(M1_IN4_GPIO_Port, M1_IN4_Pin, GPIO_PIN_RESET);
+	}
+	else {
+		HAL_GPIO_WritePin(M1_IN1_GPIO_Port, M1_IN1_Pin, GPIO_PIN_RESET);//right side counterclockwise
+		HAL_GPIO_WritePin(M1_IN2_GPIO_Port, M1_IN2_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(M1_IN3_GPIO_Port, M1_IN3_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(M1_IN4_GPIO_Port, M1_IN4_Pin, GPIO_PIN_SET);
+	}
+	setPWM(leftSpeed,rightSpeed);
+}
 void setPWM(uint16_t L,uint16_t R)
 {
 	sPWM_L = L;
