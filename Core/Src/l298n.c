@@ -14,11 +14,11 @@ void l289n_set_motorB_direction(l289n_Direction dir)
 {
 	switch(dir)
 	{
-	case CW:
+	case CCW:
 		HAL_GPIO_WritePin(MB_IN1_GPIO_Port, MB_IN1_Pin, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(MB_IN2_GPIO_Port, MB_IN2_Pin, GPIO_PIN_RESET);
 		break;
-	case CCW:
+	case CW:
 		HAL_GPIO_WritePin(MB_IN1_GPIO_Port, MB_IN1_Pin, GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(MB_IN2_GPIO_Port, MB_IN2_Pin, GPIO_PIN_SET);
 		break;
@@ -46,11 +46,11 @@ void l289n_set_motorC_direction(l289n_Direction dir)
 {
 	switch(dir)
 	{
-	case CW:
+	case CCW:
 		HAL_GPIO_WritePin(MC_IN1_GPIO_Port, MC_IN1_Pin, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(MC_IN2_GPIO_Port, MC_IN2_Pin, GPIO_PIN_RESET);
 		break;
-	case CCW:
+	case CW:
 		HAL_GPIO_WritePin(MC_IN1_GPIO_Port, MC_IN1_Pin, GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(MC_IN2_GPIO_Port, MC_IN2_Pin, GPIO_PIN_SET);
 		break;
