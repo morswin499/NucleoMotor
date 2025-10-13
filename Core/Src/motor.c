@@ -25,9 +25,15 @@ void motor_calculate_speed(motor_str *m)
 	l289n_Direction dir;
 	motor_update_count(m);
 	m->measured_speed = (m->pulse_count * TIMER_FREQ * SECOND_IN_MINUTE)/m->resolution;
+	int output;
+	if(m->set_speed != 0)
+		 output = pid_calculate(&(m->pid_controller), m->set_speed, m->measured_speed);
+	else
+	{
+		 output = 0;
+		 m->actual_PWM =0;
+	}
 
-
-	int output = pid_calculate(&(m->pid_controller), m->set_speed, m->measured_speed);
 
 	m->actual_PWM += output;
 
@@ -58,7 +64,7 @@ void motor_calculate_speed(motor_str *m)
 		return;
 	case C:
 		l289n_set_motorC_direction(dir);
-		l289n_set_motorC_speed(speed);
+		l289n_set_motorC_speed(speed*1.5);
 		return;
 	case D:
 		l289n_set_motorD_direction(dir);

@@ -54,6 +54,8 @@ uint16_t relRatio = 0;
 volatile int32_t curr_pos;
 volatile int32_t delta;
 volatile motor_str motors[NUMBER_OF_MOTORS];
+uint8_t pidOff_L = 0;
+uint8_t pidOff_R = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -63,8 +65,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
   if(huart == &huart3)
   {
-    RxSteering.leftSpeed = (100*(RxBuffer[0]-48) + 10*(RxBuffer[1]-48)+RxBuffer[2]-48)*10;
-    RxSteering.rightSpeed = (100*(RxBuffer[3]-48) + 10*(RxBuffer[4]-48)+RxBuffer[5]-48)*10;
+
+    RxSteering.leftSpeed = (100*(RxBuffer[0]-48) + 10*(RxBuffer[1]-48)+RxBuffer[2]-48);
+    RxSteering.rightSpeed = (100*(RxBuffer[3]-48) + 10*(RxBuffer[4]-48)+RxBuffer[5]-48);
     if(RxBuffer[6] - 48) // ujemna lewa
     {
     	RxSteering.leftSpeed *= -1;
@@ -73,6 +76,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
     {
         RxSteering.rightSpeed *= -1;
     }
+    /*f(RxSteering.leftSpeed == 0) pidOff_L = 1;
+    else pidOff_L = 0;
+    if(RxSteering.rightSpeed == 0) pidOff_R = 1;
+    else pidOff_R = 0;*/
     motor_set_speed(&motors[0], RxSteering.leftSpeed);
     motor_set_speed(&motors[1], RxSteering.rightSpeed);
 
@@ -160,13 +167,14 @@ int main(void)
 //  HAL_NVIC_EnableIRQ(TIM1_UP_TIM10_IRQn);
   HAL_UART_Receive_IT(&huart3,RxBuffer,8);
   l289n_init();
-  motor_str_init(&motors[0], &htim2, A);
+  motor_str_init(&motors[0], &htim4, A);
   motor_str_init(&motors[1], &htim3, B);
   pid_init(&motors[0].pid_controller, MOTOR_A_Kp, MOTOR_A_Ki, MOTOR_A_Kd, MOTOR_A_ANTI_WINDUP);
   pid_init(&motors[1].pid_controller, MOTOR_B_Kp, MOTOR_B_Ki, MOTOR_B_Kd, MOTOR_B_ANTI_WINDUP);
   HAL_TIM_Base_Start_IT(&htim6);
-  HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
+  //HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
   HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
+  HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);
   while (1)
   {
     /* USER CODE END WHILE */
