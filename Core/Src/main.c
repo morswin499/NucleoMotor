@@ -169,8 +169,8 @@ int main(void)
   l289n_init();
   motor_str_init(&motors[0], &htim4, A);
   motor_str_init(&motors[1], &htim3, B);
-  //pid_init(&motors[0].pid_controller, MOTOR_A_Kp, MOTOR_A_Ki, MOTOR_A_Kd, MOTOR_A_ANTI_WINDUP);
-  //pid_init(&motors[1].pid_controller, MOTOR_B_Kp, MOTOR_B_Ki, MOTOR_B_Kd, MOTOR_B_ANTI_WINDUP);
+  pid_init(&motors[0].pid_controller, MOTOR_A_Kp, MOTOR_A_Ki, MOTOR_A_Kd, MOTOR_A_ANTI_WINDUP);
+  pid_init(&motors[1].pid_controller, MOTOR_B_Kp, MOTOR_B_Ki, MOTOR_B_Kd, MOTOR_B_ANTI_WINDUP);
   HAL_TIM_Base_Start_IT(&htim6);
   //HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
   HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
