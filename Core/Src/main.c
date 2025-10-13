@@ -48,7 +48,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t RxBuffer[8];
+uint8_t RxBuffer[3];
 volatile steering RxSteering;
 uint16_t relRatio = 0;
 volatile int32_t curr_pos;
@@ -66,25 +66,28 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
   if(huart == &huart3)
   {
 
-    RxSteering.leftSpeed = (100*(RxBuffer[0]-48) + 10*(RxBuffer[1]-48)+RxBuffer[2]-48);
-    RxSteering.rightSpeed = (100*(RxBuffer[3]-48) + 10*(RxBuffer[4]-48)+RxBuffer[5]-48);
-    if(RxBuffer[6] - 48) // ujemna lewa
-    {
-    	RxSteering.leftSpeed *= -1;
-    }
-    if(RxBuffer[7] - 48) //ujemna prawa
-    {
-        RxSteering.rightSpeed *= -1;
-    }
-    /*f(RxSteering.leftSpeed == 0) pidOff_L = 1;
-    else pidOff_L = 0;
-    if(RxSteering.rightSpeed == 0) pidOff_R = 1;
-    else pidOff_R = 0;*/
+    RxSteering.leftSpeed = RxBuffer[0];
+    RxSteering.rightSpeed = RxBuffer[1];
+    switch (RxBuffer[2]) {
+		case 1:	//left signed
+			RxSteering.leftSpeed *=-1;
+			break;
+		case 2:	//right signed
+			RxSteering.rightSpeed *=-1;
+			break;
+		case 3:	//both signed
+			RxSteering.leftSpeed *=-1;
+			RxSteering.rightSpeed *=-1;
+			break;
+		default:
+			break;
+	}
+
     motor_set_speed(&motors[0], RxSteering.leftSpeed);
     motor_set_speed(&motors[1], RxSteering.rightSpeed);
 
 
-HAL_UART_Receive_IT(&huart3,RxBuffer,8);
+HAL_UART_Receive_IT(&huart3,RxBuffer,3);
 __HAL_TIM_SET_COUNTER(&htim9, 0);
 
 

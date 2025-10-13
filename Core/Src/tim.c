@@ -861,7 +861,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	{
 		//stop();
 		//HAL_UART_AbortReceive_IT(&huart3);
-		//HAL_UART_Receive_IT(&huart3,RxBuffer,8);
+		//HAL_UART_Receive_IT(&huart3,RxBuffer,3);
 	}
 
 }
