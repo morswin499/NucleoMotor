@@ -83,8 +83,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			break;
 	}
 
-    motor_set_speed(&motors[0], RxSteering.leftSpeed);
-    motor_set_speed(&motors[1], RxSteering.rightSpeed);
+    motor_set_speed(&motors[0], RxSteering.leftSpeed*2);
+    motor_set_speed(&motors[1], RxSteering.rightSpeed*2);
 
 
 HAL_UART_Receive_IT(&huart3,RxBuffer,3);
@@ -168,7 +168,7 @@ int main(void)
 //  HAL_TIM_Base_Start_IT(&htim10);
 //  HAL_NVIC_EnableIRQ(TIM1_BRK_TIM9_IRQn);
 //  HAL_NVIC_EnableIRQ(TIM1_UP_TIM10_IRQn);
-  HAL_UART_Receive_IT(&huart3,RxBuffer,8);
+  HAL_UART_Receive_IT(&huart3,RxBuffer,3);
   l289n_init();
   motor_str_init(&motors[0], &htim4, A);
   motor_str_init(&motors[1], &htim3, B);

@@ -14,17 +14,17 @@
 #include <stdint.h>
 
 #define RESOLUTION	1200
-#define TIMER_FREQ	10
+#define TIMER_FREQ	50
 #define SECOND_IN_MINUTE 60
 
-#define MOTOR_A_Kp					0.7
+#define MOTOR_A_Kp					0.2
 #define MOTOR_A_Ki					0
-#define MOTOR_A_Kd					2.7
+#define MOTOR_A_Kd					0.5
 #define MOTOR_A_ANTI_WINDUP			1000
 
-#define MOTOR_B_Kp					0.7
+#define MOTOR_B_Kp					0.2
 #define MOTOR_B_Ki					0
-#define MOTOR_B_Kd					2.7
+#define MOTOR_B_Kd					0.5
 #define MOTOR_B_ANTI_WINDUP			1000
 
 //#define MOTOR_C_Kp					1
