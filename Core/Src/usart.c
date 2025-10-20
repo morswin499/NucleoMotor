@@ -125,5 +125,11 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 }
 
 /* USER CODE BEGIN 1 */
-
+uint8_t uartSendData(UART_HandleTypeDef* uartHandle, uint8_t* data, uint8_t len)
+{
+	if (HAL_UART_Transmit_IT(&uartHandle, data, len) == HAL_OK) {
+			return 0;
+		}
+	return 1;
+}
 /* USER CODE END 1 */

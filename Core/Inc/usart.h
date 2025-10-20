@@ -41,7 +41,7 @@ extern UART_HandleTypeDef huart3;
 void MX_USART3_UART_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+uint8_t uartSendData(UART_HandleTypeDef* uartHandle, uint8_t* data, uint8_t len);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

@@ -83,12 +83,12 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			break;
 	}
 
-    motor_set_speed(&motors[0], RxSteering.leftSpeed*2);
-    motor_set_speed(&motors[1], RxSteering.rightSpeed*2);
+    motor_set_speed(&motors[0], RxSteering.leftSpeed*10);
+    motor_set_speed(&motors[1], RxSteering.rightSpeed*10);
 
 
 HAL_UART_Receive_IT(&huart3,RxBuffer,3);
-__HAL_TIM_SET_COUNTER(&htim9, 0);
+//__HAL_TIM_SET_COUNTER(&htim9, 0);
 
 
 
@@ -143,7 +143,6 @@ int main(void)
   MX_TIM4_Init();
   MX_USART3_UART_Init();
   MX_TIM5_Init();
-  MX_TIM9_Init();
   MX_TIM10_Init();
   MX_TIM6_Init();
   MX_TIM11_Init();

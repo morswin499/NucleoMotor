@@ -64,7 +64,6 @@ extern volatile motor_str motors[NUMBER_OF_MOTORS];
 /* External variables --------------------------------------------------------*/
 extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim6;
-extern TIM_HandleTypeDef htim9;
 extern TIM_HandleTypeDef htim10;
 extern TIM_HandleTypeDef htim11;
 extern UART_HandleTypeDef huart3;
@@ -219,7 +218,6 @@ void TIM1_BRK_TIM9_IRQHandler(void)
 
   /* USER CODE END TIM1_BRK_TIM9_IRQn 0 */
   HAL_TIM_IRQHandler(&htim1);
-  HAL_TIM_IRQHandler(&htim9);
   /* USER CODE BEGIN TIM1_BRK_TIM9_IRQn 1 */
   //stop();
 //  HAL_UART_AbortReceive_IT(&huart3);
