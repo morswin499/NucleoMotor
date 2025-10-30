@@ -23,9 +23,14 @@
 /* USER CODE BEGIN 0 */
 #include "motor.h"
 #include "MotorDriver.h"
+#include "estpos.h"
 extern uint8_t RxBuffer[8];
 extern volatile motor_str motors[NUMBER_OF_MOTORS];
 extern UART_HandleTypeDef huart3;
+extern int posX;
+extern int posY;
+extern float alpha;
+extern float walpha;
 /* USER CODE END 0 */
 
 TIM_HandleTypeDef htim1;
@@ -54,9 +59,9 @@ void MX_TIM1_Init(void)
 
   /* USER CODE END TIM1_Init 1 */
   htim1.Instance = TIM1;
-  htim1.Init.Prescaler = 99;
+  htim1.Init.Prescaler = 4;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 4999;
+  htim1.Init.Period = 999;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
@@ -799,11 +804,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	{
 		motors_calculate_speed(motors,NUMBER_OF_MOTORS);
 		uint8_t data[16];
-		int32_t speeds[4]={motors[0].measured_speed,
-						   motors[0].set_speed,
-						   motors[1].measured_speed,
-						   motors[1].set_speed};
+		int32_t speeds[4]={posX,
+						   posY,
+						   motors[0].measured_speed,
+						   motors[0].set_speed};
 		Int32ArrayToBytes(speeds, data);
+		estimate(motors[0].measured_speed, motors[1].measured_speed);
 		uartSendData(&huart3, data, 16);
 	}
 	if(htim->Instance == TIM9)

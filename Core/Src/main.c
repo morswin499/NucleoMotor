@@ -28,6 +28,7 @@
 #include "motor.h"
 #include "pid.h"
 #include "l289n.h"
+#include "estpos.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -56,6 +57,12 @@ volatile int32_t delta;
 volatile motor_str motors[NUMBER_OF_MOTORS];
 uint8_t pidOff_L = 0;
 uint8_t pidOff_R = 0;
+int posX = 0;
+int posY = 0;
+float alpha = 0;
+int vL = 0;
+int vR = 0;
+float walpha = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -83,8 +90,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			break;
 	}
 
-    motor_set_speed(&motors[0], RxSteering.leftSpeed*10);
-    motor_set_speed(&motors[1], RxSteering.rightSpeed*10);
+    motor_set_speed(&motors[0], (int)(RxSteering.leftSpeed*1.6));
+    motor_set_speed(&motors[1], (int)(RxSteering.rightSpeed*1.6));
 
 
 HAL_UART_Receive_IT(&huart3,RxBuffer,3);
