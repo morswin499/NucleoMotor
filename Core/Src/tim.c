@@ -24,6 +24,7 @@
 #include "motor.h"
 #include "MotorDriver.h"
 #include "estpos.h"
+	uint8_t data[16];
 extern uint8_t RxBuffer[8];
 extern volatile motor_str motors[NUMBER_OF_MOTORS];
 extern UART_HandleTypeDef huart3;
@@ -803,7 +804,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	if(htim->Instance == TIM6)
 	{
 		motors_calculate_speed(motors,NUMBER_OF_MOTORS);
-		uint8_t data[16];
+
 		int32_t speeds[4]={posX,
 						   posY,
 						   motors[0].measured_speed,

@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -50,6 +51,9 @@
 
 /* USER CODE BEGIN PV */
 uint8_t RxBuffer[3];
+uint8_t DataUARTrx[3];
+uint8_t LEN_BUF_RX_UART;
+uint8_t FluartRxFull = 0;
 volatile steering RxSteering;
 uint16_t relRatio = 0;
 volatile int32_t curr_pos;
@@ -68,7 +72,7 @@ float walpha = 0;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+/*void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
   if(huart == &huart3)
   {
@@ -102,17 +106,25 @@ HAL_UART_Receive_IT(&huart3,RxBuffer,3);
     //watchdog reset
 
   }
-}
+}*/
 void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 {
 
-  if( huart == &huart3 ) HAL_UART_Receive_IT(&huart3,RxBuffer,8);
+  if( huart == &huart3 ) HAL_UART_Receive_IT(&huart3,RxBuffer,3);
 }
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void InitUARTrx(){
+	HAL_UARTEx_ReceiveToIdle_DMA(&huart3, DataUARTrx, LEN_BUF_RX_UART);
+}
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
+	if(huart == &huart3){
+		FluartRxFull = Size;
+		InitUARTrx();
+	}
+}
 /* USER CODE END 0 */
 
 /**
@@ -144,6 +156,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_TIM1_Init();
   MX_TIM2_Init();
   MX_TIM3_Init();
@@ -184,8 +197,35 @@ int main(void)
   //HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
   HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
   HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);
-  while (1)
+   while (1)
   {
+	   if(FluartRxFull == 3)
+	   {
+		   memcpy(RxBuffer, DataUARTrx, 3);
+		   RxSteering.leftSpeed = RxBuffer[0];
+		       RxSteering.rightSpeed = RxBuffer[1];
+		       switch (RxBuffer[2]) {
+		   		case 1:	//left signed
+		   			RxSteering.leftSpeed *=-1;
+		   			break;
+		   		case 2:	//right signed
+		   			RxSteering.rightSpeed *=-1;
+		   			break;
+		   		case 3:	//both signed
+		   			RxSteering.leftSpeed *=-1;
+		   			RxSteering.rightSpeed *=-1;
+		   			break;
+		   		default:
+		   			break;
+		   	}
+
+		       motor_set_speed(&motors[0], (int)(RxSteering.leftSpeed*1.6));
+		       motor_set_speed(&motors[1], (int)(RxSteering.rightSpeed*1.6));
+
+
+		   HAL_UART_Receive_IT(&huart3,RxBuffer,3);
+		   FluartRxFull = 0;
+	   }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
